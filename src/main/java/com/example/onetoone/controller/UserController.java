@@ -4,8 +4,6 @@ import com.example.onetoone.model.Product;
 import com.example.onetoone.model.User;
 import com.example.onetoone.repo.ProductRepo;
 import com.example.onetoone.repo.UserRepo;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -30,7 +28,7 @@ public class UserController {
     public User getUserByProductId(@PathVariable int id){
         Product product = productRepo.findById(id).get();
 //        return userRepo.findById(product.getUser().getUserId()).get();
-        return product.getUser();
+        return  product.getUser();
 
     }
 }

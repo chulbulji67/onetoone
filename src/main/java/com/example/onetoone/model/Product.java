@@ -1,6 +1,6 @@
 package com.example.onetoone.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -18,8 +18,8 @@ public class Product {
 
 
 
-
-    @OneToOne
-    @JoinColumn(name = "user_id" , referencedColumnName = "userId")
+    @JsonBackReference
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_id")
     private User user;
 }
