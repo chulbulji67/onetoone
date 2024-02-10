@@ -1,6 +1,6 @@
 package com.example.onetoone.model;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -21,7 +21,7 @@ public class User {
     private String userName;
 
 
-    @JsonManagedReference
+    @JsonBackReference
     @OneToOne(mappedBy = "user")
     private Product product;
 
